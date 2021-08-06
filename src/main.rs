@@ -28,7 +28,6 @@ async fn main() {
             Arg::with_name("user")
                 .short("u")
                 .long("user")
-                .required(true)
                 .takes_value(true),
         )
         .arg(
@@ -43,17 +42,19 @@ async fn main() {
     log::info!("start");
 
     let ckb_client: Client = http::connect("http://127.0.0.1:8114").await.unwrap();
-    let db = XSQLPool::new(
+    let db = XSQLPool::new_pgsql(
         "mercury",
-        matches.value_of("host").unwrap_or_else(|| "127.0.0.1"),
+        matches.value_of("host").unwrap_or("127.0.0.1"),
         matches
             .value_of("port")
-            .unwrap_or_else(|| "8432")
+            .unwrap_or("8432")
             .parse::<u16>()
             .unwrap(),
-        matches.value_of("user").unwrap(),
+        matches.value_of("user").unwrap_or("postgres"),
         matches.value_of("password").unwrap(),
         100,
+        1,
+        1,
     )
     .await;
 
@@ -65,8 +66,9 @@ async fn main() {
             .unwrap();
 
         log::info!("append {} block", num);
-        if let Err(e) = db.append_block(block).await {
+        if let Err(e) = db.append_block(block.clone()).await {
             log::error!("append {} error {:?}", num, e);
+            log::error!("block {:?}", block);
             return;
         }
 
