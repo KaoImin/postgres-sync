@@ -666,7 +666,7 @@ dependencies = [
 [[package]]
 name = "common"
 version = "0.1.0"
-source = "git+https://github.com/nervosnetwork/mercury?branch=sql#eea17f9d0b6d0d0e91d76b1e9f04f2b63aeefd83"
+source = "git+https://github.com/nervosnetwork/mercury?branch=sql#56b08e16190988a705749ce96af0108e74fab19b"
 dependencies = [
  "anyhow",
  "async-trait",
@@ -1960,7 +1960,7 @@ dependencies = [
  "cfg-if 1.0.0",
  "instant",
  "libc",
- "redox_syscall 0.2.9",
+ "redox_syscall 0.2.10",
  "smallvec",
  "winapi",
 ]
@@ -2139,7 +2139,7 @@ dependencies = [
 [[package]]
 name = "protocol"
 version = "0.1.0"
-source = "git+https://github.com/nervosnetwork/mercury?branch=sql#eea17f9d0b6d0d0e91d76b1e9f04f2b63aeefd83"
+source = "git+https://github.com/nervosnetwork/mercury?branch=sql#56b08e16190988a705749ce96af0108e74fab19b"
 dependencies = [
  "ckb-jsonrpc-types",
  "ckb-types",
@@ -2351,9 +2351,9 @@ checksum = "41cc0f7e4d5d4544e8861606a285bb08d3e70712ccc7d2b84d7c0ccfaf4b05ce"
 
 [[package]]
 name = "redox_syscall"
-version = "0.2.9"
+version = "0.2.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5ab49abadf3f9e1c4bc499e8845e152ad87d2ad2d30371841171169e9d75feee"
+checksum = "8383f39639269cde97d255a32bdb68c047337295414940c68bdd30c2e13203ff"
 dependencies = [
  "bitflags",
 ]
@@ -2365,7 +2365,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "528532f3d801c87aec9def2add9ca802fe569e44a544afe633765267840abe64"
 dependencies = [
  "getrandom 0.2.3",
- "redox_syscall 0.2.9",
+ "redox_syscall 0.2.10",
 ]
 
 [[package]]
@@ -2978,7 +2978,7 @@ dependencies = [
  "cfg-if 1.0.0",
  "libc",
  "rand 0.8.4",
- "redox_syscall 0.2.9",
+ "redox_syscall 0.2.10",
  "remove_dir_all",
  "winapi",
 ]
@@ -3545,7 +3545,7 @@ checksum = "d2d7d3948613f75c98fd9328cfdcc45acc4d360655289d0a7d4ec931392200a3"
 [[package]]
 name = "xsql"
 version = "0.1.0"
-source = "git+https://github.com/nervosnetwork/mercury?branch=sql#eea17f9d0b6d0d0e91d76b1e9f04f2b63aeefd83"
+source = "git+https://github.com/nervosnetwork/mercury?branch=sql#56b08e16190988a705749ce96af0108e74fab19b"
 dependencies = [
  "ckb-jsonrpc-types",
  "ckb-types",

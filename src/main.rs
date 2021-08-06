@@ -44,6 +44,7 @@ async fn main() {
 
     let ckb_client: Client = http::connect("http://127.0.0.1:8114").await.unwrap();
     let db = XSQLPool::new(
+        "mercury",
         matches.value_of("host").unwrap_or_else(|| "127.0.0.1"),
         matches
             .value_of("port")
@@ -66,6 +67,7 @@ async fn main() {
         log::info!("append {} block", num);
         if let Err(e) = db.append_block(block).await {
             log::error!("append {} error {:?}", num, e);
+            return;
         }
 
         if num % 50000 == 0 {
