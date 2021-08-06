@@ -11,5 +11,6 @@ ckb-types = "0.43"
 clap = "2.33"
 jsonrpc-core-client = "18.0"
 log = "0.4"
+log4rs = "1.0"
 tokio = { version = "1.9", features = ["full"] }
 xsql = { git = "https://github.com/nervosnetwork/mercury", branch = "sql" }
